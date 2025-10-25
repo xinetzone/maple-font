@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Maple Mono字体管理工具命令行接口"""
-
 import sys
 from pathlib import Path
 import logging
 import argparse
 from typing import Set
-
+import io
+# sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='[maple-font-cli] %(message)s')
 logger = logging.getLogger(__name__)

@@ -2,7 +2,7 @@
 import argparse
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import importlib.util
-from io import BytesIO
+from io import BytesIO, TextIOWrapper
 import json
 import re
 import shutil
@@ -39,7 +39,8 @@ from source.py.feature import (
     get_freeze_moving_rules,
     normal_enabled_features,
 )
-
+import sys
+sys.stdout = TextIOWrapper(sys.stdout.buffer, encoding='utf-8') # 保证 Windows 系统正确构建
 
 FONT_VERSION = "v7.8"
 # =========================================================================================

@@ -68,8 +68,8 @@
   "nerd_font": {
     "enable": true,
     "version": "3.4.0",
-    "mono": false,
-    "propo": false,
+    "mono": true,
+    "propo": true,
     "use_font_patcher": false,
     "glyphs": [
       "--complete"
