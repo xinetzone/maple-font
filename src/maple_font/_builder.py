@@ -4,6 +4,7 @@ import subprocess
 import sys
 import logging
 from typing import Optional
+import os
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='[maple-font-builder] %(message)s')
@@ -84,6 +85,9 @@ def build_maple(force_rebuild: bool = False, verbose: bool = False, args=None, c
                     cwd=str(ROOT_DIR),
                     capture_output=not verbose,  # 非verbose模式下捕获输出
                     text=True,
+                    encoding="utf-8",
+                    errors="replace",
+                    env={**os.environ, "PYTHONUTF8":"1", "PYTHONIOENCODING":"utf-8"},
                     timeout=3600  # 设置1小时超时
                 )
             except subprocess.TimeoutExpired:
