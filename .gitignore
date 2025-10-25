@@ -12,3 +12,4 @@ __pycache__
 .vscode
 uv.lock
 *.backup
+*.egg-info
